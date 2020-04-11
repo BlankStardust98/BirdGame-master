@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public GameObject lola;
     public UImanager UI;
     public bool gameEnded;
+    public UImanager restart;
     // this will check for when the player dies
     
     // Start is called before the first frame update
@@ -18,6 +19,7 @@ public class PlayerController : MonoBehaviour
 
         lola.GetComponent<Rigidbody2D>().gravityScale = 0; ;
         UI = FindObjectOfType<UImanager>();
+        restart = FindObjectOfType<UImanager>();
         
         
     }
@@ -32,7 +34,8 @@ public class PlayerController : MonoBehaviour
         }
         
     }
-   public void RestartGame()
+    // the below should be  for the resetting instead Of restart probably for powerups
+   /*public void RestartGame()
    {
        StartCoroutine("RestartGameCoroutine");
    }    
@@ -43,9 +46,7 @@ public class PlayerController : MonoBehaviour
        Time.timeScale = 1f;
        transform.position = new Vector2(lola.transform.position.x, lola.transform.position.y);
        UI.Panel.gameObject.SetActive(true);
-
-       
-   }
+   }*/
 
    public void OnTriggerEnter2D(Collider2D coll)
    {
@@ -54,10 +55,11 @@ public class PlayerController : MonoBehaviour
        {
             gameEnded = true;
            UI.Panel.gameObject.SetActive(true);
+           restart.Restartbutton.SetActive(true);
           Time.timeScale = 0;
            // if live is gained ask the player to use it or not. if not
 
-            RestartGame();
+            //RestartGame();
        }
        
    }

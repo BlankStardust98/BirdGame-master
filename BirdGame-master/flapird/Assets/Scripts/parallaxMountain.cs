@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class parallaxMountain : MonoBehaviour
 {
-    [SerializeField] private float speed = -2f;
+     public float speed = -2f;
     // this refers to the speed the mountains are moving
     public GameObject mountain1, mountain2;
     // this refer to the sprites called mountains

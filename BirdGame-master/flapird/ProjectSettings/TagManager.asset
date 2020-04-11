@@ -7,6 +7,7 @@ TagManager:
   - ground
   - pipe
   - mountain
+  - powerups
   layers:
   - Default
   - TransparentFX
